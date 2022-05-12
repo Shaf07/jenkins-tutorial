@@ -1,14 +1,19 @@
 pipeline{
         agent any
         stages{
-            stage('Make Directory'){
+             stage('clone sh repo'){
                 steps{
-                    sh "mkdir ~/jenkins-tutorial-test"
+                    git branch: 'main', url: 'https://github.com/Shaf07/jenkins-tut-2.git'
+                        }
+                }
+            stage('run script'){
+                steps{
+                    sh 'sh chmod +x /main/myscript'
                 }
             }
-            stage('Make Files'){
+            stage('output'){
                 steps{
-                    sh "touch ~/jenkins-tutorial-test/file1 ~/jenkins-tutorial-test/file2"
+                    archiveArtifacts artifacts: 'output', followSymlinks: false
                 }
             }
         }
