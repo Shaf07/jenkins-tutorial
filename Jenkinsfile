@@ -14,7 +14,7 @@ pipeline{
             }
             stage('output'){
                 steps{
-                    archiveArtifacts artifacts: 'output', followSymlinks: false
+                    archiveArtifacts artifacts: 'output.txt', followSymlinks: false
                 }
             }
         }
