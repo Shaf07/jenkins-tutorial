@@ -3,7 +3,7 @@ pipeline{
         stages{
              stage('clone sh repo'){
                 steps{
-                    git branch: 'main', url: 'https://github.com/Shaf07/jenkins-tut-2.git'
+                    git branch: 'main', url: 'https://github.com/Shaf07/jenkins-tut-2'
                         }
                 }
             stage('run script'){
